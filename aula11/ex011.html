@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+    <h1>Nacionalidade</h1>
+    <input type="text" id="pais">
+    <button onclick="nacionalidade()">Submit</button>
+    <p id="saida"></p>
+    <script>
+        function nacionalidade(){
+            valTxt = document.getElementById('pais').value;
+            output = document.querySelector('p#saida');
+            
+            if(valTxt == 'Brasil'){
+                output.innerHTML = 'Brasileiro';
+            }else{
+                output.innerHTML = 'Estrangeiro';
+            }
+        }
+    </script>
+</body>
+</html>
