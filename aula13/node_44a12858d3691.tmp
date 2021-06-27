@@ -1,0 +1,10 @@
+var cont = 1;
+do{
+    console.log(`Passo ${cont}`);
+}while(cont <= 6)
+
+
+/*while(cont <= 6){
+    console.log('Tudo bem?');
+    cont++;
+}*/
