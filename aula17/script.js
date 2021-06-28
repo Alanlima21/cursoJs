@@ -30,9 +30,8 @@ function finalizar(){
     }else{
         let result = document.getElementById('view');
         lista.sort();
-
         result.innerHTML = `Ao todo temos ${lista.length} números cadastrados. <br>`;
-        result.innerHTML += `O maior valor informado foi ${lista[lista.length -1 ]} <br>`;
+        result.innerHTML += `O maior valor informado foi ${lista[lista.length -1]} <br>`;
         result.innerHTML += `O menor valor informado foi ${lista[0]} <br>`;
 
         let soma = 0;
