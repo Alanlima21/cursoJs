@@ -1,40 +1,47 @@
-lista = [];
+let lista = [];
 function adicionar(){
     let result = document.getElementById('view');
     result.innerHTML = '';
-    let valor = document.getElementById('num').value;
+    let valor = document.getElementById('num');
     let select = document.getElementById('list');
-    let num = Number(valor);
+    let num = Number(valor.value);
     
-
-    if(valor.length == 0 || num < 1 || num > 100){
+    if(valor.length == 0 || num <= 0 || num > 100){
         alert('Informe um valor válido');
     }else{
-        this.lista.push(num);
-        let item = document.createElement('option');
-        item.text = `Valor ${num} adicionado`;
-        select.appendChild(item);
+        if(lista.indexOf(num) == -1){
+            lista.push(num);
+            let item = document.createElement('option');
+            item.text = `Valor ${num} adicionado`;
+            select.appendChild(item);
+        }else{
+            alert('Valor já está na lista');
+        }
+        //zerar o input
+        valor.value = '';
+        //colocar o foco/cursor no input
+        valor.focus();
     }
 }
 
 function finalizar(){
-    if(this.lista.length == 0 ){
+    if(lista.length == 0 ){
         alert('Adicione valores antes de finalizar ');
     }else{
         let result = document.getElementById('view');
-        this.lista.sort();
+        lista.sort();
 
-        result.innerHTML = `Ao todo temos ${this.lista.length} números cadastrados. <br>`;
-        result.innerHTML += `O maior valor informado foi ${this.lista[this.lista.length -1 ]} <br>`;
-        result.innerHTML += `O menor valor informado foi ${this.lista[0]} <br>`;
+        result.innerHTML = `Ao todo temos ${lista.length} números cadastrados. <br>`;
+        result.innerHTML += `O maior valor informado foi ${lista[lista.length -1 ]} <br>`;
+        result.innerHTML += `O menor valor informado foi ${lista[0]} <br>`;
 
         let soma = 0;
-        for(let num in this.lista){
-            soma += this.lista[num];
+        for(let num in lista){
+            soma += lista[num];
         }
 
         result.innerHTML += `Somando todos os valores temos ${soma}. <br>`;
-        result.innerHTML += `a média dos valores digitados é ${soma / this.lista.length}. <br>`;
+        result.innerHTML += `a média dos valores digitados é ${soma / lista.length}. <br>`;
     }
 
 }
